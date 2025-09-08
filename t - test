@@ -1,0 +1,15 @@
+import scipy.stats as st
+def paired_ttest_pvalue(y_true, y_baseline):
+    """
+    y_true, y_baseline: 1D arrays of per-case scores (paired)
+    returns: t-statistic, two-sided p-value
+    """
+    tstat, pval = st.ttest_rel(y_true, y_baseline, nan_policy='omit')
+    return tstat, pval
+
+
+""" to use this code , run the below part:
+# e.g., compare RA-U-Net dice vs baseline (nnU-Net) dice for same test cases
+tstat, pval = paired_ttest_pvalue(ra_dice_array, baseline_dice_array)
+print(f"Paired t-test: t={tstat:.3f}, p={pval:.4e}")
+"""
