@@ -59,6 +59,3 @@ scan_seconds = estimate_scan_time(timing["per_slice_mean_s"], slices_per_scan=20
 print(f"Estimated per-scan time (20 slices): {scan_seconds:.2f} s")
 """
 
-
-
-"""
